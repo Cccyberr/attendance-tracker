@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance Report</title>
+</head>
+<body>
+    <h2>Attendance Report</h2>
+
+    <table border="1">
+        <tr>
+            <th>Student Name</th>
+            <th>Total Classes</th>
+            <th>Attended</th>
+            <th>Missed</th>
+            <th>Remarks</th>
+        </tr>
+        {% for student in students %}
+        <tr>
+            <td>{{ student.name }}</td>
+            <td>{{ student.total }}</td>
+            <td>{{ student.attended }}</td>
+            <td>{{ student.total - student.attended }}</td>
+            <td>
+                {% if student.total - student.attended < (student.total / 2) %}
+                    Safe to bunk
+                {% elif student.total - student.attended == (student.total / 2) %}
+                    At the limit
+                {% else %}
+                    No more bunking!
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

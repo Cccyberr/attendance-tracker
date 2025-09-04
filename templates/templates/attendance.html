@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mark Attendance</title>
+</head>
+<body>
+    <h2>Mark Attendance</h2>
+    <form method="POST" action="/attendance">
+        <label>Student Name:</label><br>
+        <input type="text" name="student_name" required><br><br>
+
+        <label>Status:</label><br>
+        <select name="status">
+            <option value="Present">Present</option>
+            <option value="Absent">Absent</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit Attendance">
+    </form>
+</body>
+</html>
